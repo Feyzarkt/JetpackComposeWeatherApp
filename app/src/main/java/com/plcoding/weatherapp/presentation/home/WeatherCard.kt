@@ -1,4 +1,4 @@
-package com.plcoding.weatherapp.presentation
+package com.plcoding.weatherapp.presentation.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 import com.plcoding.weatherapp.R
+import com.plcoding.weatherapp.presentation.WeatherState
 
 @Composable
 fun WeatherCard(
@@ -54,7 +55,7 @@ fun WeatherCard(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "${data.temperatureCelsius}*C",
+                    text = "${data.temperatureCelsius}°C",
                     fontSize = 50.sp,
                     color = Color.White
                 )

@@ -1,4 +1,4 @@
-package com.plcoding.weatherapp.presentation
+package com.plcoding.weatherapp.presentation.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.plcoding.weatherapp.presentation.WeatherState
 
 
 @Composable
@@ -22,11 +23,21 @@ fun WeatherForecast(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         ) {
-            Text(
-                text = "Today",
-                fontSize = 20.sp,
-                color = Color.White
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ){
+                Text(
+                    text = "Today",
+                    fontSize = 20.sp,
+                    color = Color.White
+                )
+                Text(
+                    text = "Weather forecast for 7 days",
+                    fontSize = 16.sp,
+                    color = Color.White
+                )
+            }
             Spacer(modifier = Modifier.height(16.dp))
             LazyRow(content = {
                 items(data) { weatherData ->
