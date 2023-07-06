@@ -3,10 +3,12 @@ package com.plcoding.weatherapp.presentation.home
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.plcoding.weatherapp.presentation.WeatherState
@@ -14,6 +16,7 @@ import com.plcoding.weatherapp.presentation.WeatherState
 
 @Composable
 fun WeatherForecast(
+    onNavigateToDaily: () -> Unit,
     state: WeatherState,
     modifier: Modifier = Modifier
 ) {
@@ -32,10 +35,9 @@ fun WeatherForecast(
                     fontSize = 20.sp,
                     color = Color.White
                 )
-                Text(
-                    text = "Weather forecast for 7 days",
-                    fontSize = 16.sp,
-                    color = Color.White
+                ClickableText(
+                    text = AnnotatedString("Weather forecast for 7 days"),
+                    onClick = {onNavigateToDaily()}
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
